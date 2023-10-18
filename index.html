@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Persona {
+            #documento;
+            #nombreCompleto;
+
+            constructor() {
+                this.#documento = 0;
+                this.#nombreCompleto = '';
+            }
+
+            set setDocumento(value) {
+                this.#documento = value;
+            }
+            get getDocumento() {
+                return this.#documento;
+            }
+            set setNombreCompleto(value) {
+                this.#nombreCompleto = value;
+            }
+            get getNombreCompleto() {
+                return this.#nombreCompleto;
+            }
+
+            informacion() {
+                console.log(`Mi nombre es ` + this.getNombreCompleto + `y mi numero de documeto es ` +
+                    this.getDocumento);
+            }
+
+
+        }
+
+
+        class Aprendiz extends Persona {
+            #ficha;
+            #programa;
+
+            constructor() {
+                super();
+                this.#ficha = '';
+                this.#programa = '';
+            }
+            set setFicha(value) {
+                this.#ficha = value;
+            }
+            get getFicha() {
+                return this.#ficha;
+            }
+            set setPrograma(value) {
+                this.#programa = value;
+            }
+            get getPrograma() {
+                return this.#programa
+            }
+
+            matricula() {
+                console.log(`Me matricule en la ficha ` + this.getFicha + ` del programa ` +
+                    this.getPrograma);
+            }
+
+        }
+
+        const aprendiz1 = new Aprendiz;
+
+        aprendiz1.setNombreCompleto = 'steven';
+        aprendiz1.setDocumento = '191919191';
+        aprendiz1.setFicha = '2798618';
+        aprendiz1.setPrograma = 'ADSO';
+
+        aprendiz1.informacion();
+        aprendiz1.matricula();
+
+
+
+        class EtapaLectiva extends Aprendiz {
+
+            #NumeroTrimestre = '';
+            #FecheIncio = '';
+            #fechaTerminacon = '';
+
+            constructor() {
+                super();
+                this.#NumeroTrimestre;
+                this.#FecheIncio;
+                this.#fechaTerminacon;
+
+            }
+
+            set setNumeroTrimestre(value) {
+                this.#NumeroTrimestre = value;
+            }
+            get getNumeroTrimestre() {
+                return this.#NumeroTrimestre;
+            }
+            set setFechaInicio(value) {
+                this.#FecheIncio = value;
+            }
+            get getFechaInicio() {
+                return this.#FecheIncio;
+            }
+            set setFechaTerminacion(value) {
+                this.#fechaTerminacon = value;
+            }
+            get getFechaTerminacion() {
+                return this.#fechaTerminacon;
+            }
+
+            estado() {
+                console.log(`Me encuentro en el trimestre ` + this.getNumeroTrimestre +
+                    ` que inicio ` + this.getFechaInicio + ` y termina en ` + this.getFechaTerminacion);
+            }
+
+        }
+
+        const aprendiz2 = new EtapaLectiva;
+
+        aprendiz2.setDocumento = '13837989';
+        aprendiz2.setNombreCompleto = 'steven sanchez';
+        aprendiz2.setNumeroTrimestre = '1';
+        aprendiz2.setFechaInicio = 'julio 10 2023';
+        aprendiz2.setFechaTerminacion = 'octubre 10 2025';
+
+        aprendiz2.informacion();
+        aprendiz2.estado();
+
+        class EtapaPractica extends Aprendiz {
+            #modalidad;
+            #fechaInicio;
+            #fechaTerminacion;
+
+            constructor() {
+                super();
+                this.#modalidad = '';
+                this.#fechaInicio = '';
+                this.#fechaTerminacion = '';
+            }
+
+            set setModalidad(value) {
+                this.#modalidad = value;
+            }
+            get getModalidad() {
+                return this.#modalidad;
+            }
+            set setFechaInicio(value) {
+                this.#fechaInicio = value;
+            }
+            get getFechaInicio() {
+                return this.#fechaInicio;
+            }
+            set setFechaTerminacion(value) {
+                this.#fechaTerminacion = value;
+            }
+            get getFechaTerminacion() {
+                return this.#fechaTerminacion;
+            }
+
+            estado() {
+                console.log(`Estoy en la modalidad ` + this.getModalidad + ` inicie en la fecha ` +
+                    this.getFechaInicio + ` y terminare en ` + this.getFechaTerminacion);
+            }
+
+        }
+
+        const aprendiz3 = new EtapaPractica;
+
+        aprendiz3.setDocumento = '137214744';
+        aprendiz3.setNombreCompleto = 'Daniel eredia';
+        aprendiz3.setModalidad = 'contrato aprendizaje';
+        aprendiz3.setFechaInicio = 'abril 10 2023';
+        aprendiz3.setFechaTerminacion = 'octubre 10 2025';
+
+        aprendiz3.informacion();
+        aprendiz3.estado();
+
+
+        class Instructor extends Persona {
+            #profecion;
+            #salarioBasico;
+
+
+            constructor() {
+                super();
+                this.#profecion = '';
+                this.#salarioBasico = 0;
+            }
+
+            set setProfecion(value) {
+                this.#profecion = value;
+            }
+            get getProfecion() {
+                return this.#profecion;
+            }
+            set setSalarioBasico(value) {
+                this.#salarioBasico = value;
+            }
+            get getSalarioBasico() {
+                return this.#salarioBasico;
+            }
+            contratado() {
+                console.log(`el contrato para la profecion ` + this.getProfecion + `tiene un salirio basico de ` +
+                    this.getSalarioBasico)
+            }
+        }
+
+
+        const instructor1 = new Instructor;
+
+        instructor1.setNombreCompleto = 'alejandro parra';
+        instructor1.setDocumento = '12872938';
+        instructor1.setProfecion = 'ingenier sistemas';
+        instructor1.setSalarioBasico = 15000000;
+
+        instructor1.informacion();
+        instructor1.contratado();
+
+
+        class InstructorPlanta extends Instructor {
+            #grado;
+            #fechaVinculacion;
+
+            constructor() {
+                super();
+                this.#grado = 0;
+                this.#fechaVinculacion = ''
+            }
+
+            set setGrado(value) {
+                this.#grado = value;
+            }
+            get getGrado() {
+                return this.#grado;
+            }
+            set setFechaViculacion(value) {
+                this.#fechaVinculacion = value;
+            }
+            get getFechaVinculacion() {
+                return this.#fechaVinculacion;
+            }
+
+            estado() {
+                console.log(`Mi salario esta en grado ` + this.getGrado +
+                    `y me vincule en la fecha ` + this.getFechaVinculacion);
+
+            }
+            sueldo() {
+                const salarioGrado = 100000;
+                const nivelGrado = this.getGrado
+                const suma = nivelGrado * salarioGrado + this.getSalarioBasico;
+                console.log(`mi sueldo es de ${suma}`);
+            }
+
+
+        }
+
+
+
+        const instructorPlanta1 = new InstructorPlanta;
+
+        instructorPlanta1.setNombreCompleto = 'alejandro parra';
+        instructorPlanta1.setDocumento = '12872938';
+        instructorPlanta1.setGrado = 15;
+        instructorPlanta1.setFechaViculacion = '7 /06/ 2015';
+
+
+        instructorPlanta1.informacion();
+        instructorPlanta1.estado();
+        instructorPlanta1.sueldo();
+
+
+        class InstructorContrato extends Instructor {
+
+            #fechaInicioContrato;
+            #duracionContrato;
+
+            constructor() {
+                super();
+                this.#fechaInicioContrato = '';
+                this.#duracionContrato = 0;
+            }
+
+            set setFechaInicioContrato(value) {
+                this.#fechaInicioContrato = value
+            }
+
+            get getFechaInicioContrato() {
+                return this.#fechaInicioContrato
+            }
+            set setDuracionContrato(value) {
+                this.#duracionContrato = value;
+            }
+
+            get getDuracionContrato() {
+                return this.#duracionContrato
+            }
+
+            calcularFechaFinContrato() {
+                if (!this.#fechaInicioContrato || !this.#duracionContrato) {
+                    return 'Falta información para calcular la fecha de finalización del contrato.';
+                }
+
+                const fechaInicio = new Date(this.#fechaInicioContrato);
+                const duracionMeses = this.#duracionContrato;
+                const fechaFin = new Date(fechaInicio);
+                fechaFin.setMonth(fechaInicio.getMonth() + duracionMeses);
+
+                return fechaFin.toDateString();
+            }
+
+            estado(){
+                console.log(`fecha de inicio del contrato ` + this.getFechaInicioContrato)
+                console.log(`duracion del contrato ` + this.getDuracionContrato);
+                console.log(`fecha de finalizacion de contrato: ` + this.calcularFechaFinContrato())
+            }
+            
+
+            }
+
+        const instructorContrato1 = new InstructorContrato;
+
+        instructorContrato1.setNombreCompleto = 'alejandro parra';
+        instructorContrato1.setDocumento = '12872938';
+        instructorContrato1.setGrado = 19;
+        instructorContrato1.setFechaInicioContrato = '1/1/2023';
+        instructorContrato1.setDuracionContrato = 12;
+        instructorContrato1.setSalarioBasico = 2000000
+
+        instructorContrato1.informacion();
+        instructorContrato1.estado();
+        instructorContrato1.contratado();
+    
+
+        console.log(`primer ejercicio`);
+        console.log(`***********************************************************************`);
+
+        class Producto{
+            #codigo;
+            #titulo;
+            #autor;
+
+            constructor(){
+                this.#codigo = '';
+                this.#titulo = '';
+                this.#autor = '';
+            }
+
+            set setCodigo(value){
+                this.#codigo = value;
+            }
+            get getCodigo(){
+                return this.#codigo;
+            }
+            set setTitulo(value){
+                this.#titulo = value;
+            }
+            get getTitulo(){
+                return this.#titulo;
+            }
+            set setAutor(value){
+                this.#autor = value;
+            }
+            get getAutor(){
+                return this.#autor
+            }
+
+            informacion(){
+                console.log(`El titulo de la obra ` + this.getTitulo + 
+                    `y el autor es ` + this.#autor + `y su codigo es ` + this.#codigo)
+            }
+
+        }
+
+        const producto1 = new Producto;
+        producto1.setTitulo = 'GOT';
+        producto1.setAutor = 'skinny';
+        producto1.setCodigo = '14354';
+
+        producto1.informacion();
+
+
+        class ProductoImpreso extends Producto{
+
+            #editorial;
+            #año;
+            #precio;
+
+            constructor(){
+                super();
+                this.#editorial = ''
+                this.#año = ''
+                this.#precio = 0;
+            }
+
+            set setEditorial(value){
+                this.#editorial = value;
+            }
+            get getEditorial(){
+                return this.#editorial;
+            }
+            set setAño(value){
+                this.#año = value;
+            }
+            get getAño(){
+                return this.#año
+            }
+            set setPrecio(value){
+                this.#precio = value;
+            }
+            get getPrecio(){
+                return this.#precio;
+            }
+
+            informacion1(){
+                console.log(`la editorial de el producto es `+ this.getEditorial + 
+                         `y es de el año ` + this.getAño + `y tiene un precio de ` + 
+                             this.getPrecio);
+            }
+
+        }
+
+        const ProductoImpreso1 = new ProductoImpreso;
+        ProductoImpreso1.setTitulo = 'Danza de dragones';
+        ProductoImpreso1.setAutor = 'George R.R martin';
+        ProductoImpreso1.setCodigo = '436778';
+        ProductoImpreso1.setEditorial = 'ediciones Gigamesh';
+        ProductoImpreso1.setAño = '2012';
+        ProductoImpreso1.setPrecio = 99000;
+
+        ProductoImpreso1.informacion();
+        ProductoImpreso1.informacion1();
+
+
+
+        class Revista extends ProductoImpreso{
+            #volumen;
+
+            constructor(){
+                super();
+                this.#volumen = '';
+            }
+            set setVolumen(value){
+                this.#volumen = value;
+            }
+            get getVolumen(){
+                return this.#volumen;
+            }
+             estado(){
+                console.log(`la revista se encuentra en el volumen `+ this.#volumen);
+             }
+
+        }
+
+        const revista1 = new Revista;
+        revista1.setTitulo = 'vogue';
+        revista1.setAutor = 'anna wintour';
+        revista1.setCodigo = '5476787';
+        revista1.setEditorial = 'times square';
+        revista1.setAño = '2009';
+        revista1.setPrecio = 40000;
+        revista1.setVolumen = "6"
+        
+        revista1.informacion1();
+        revista1.estado();
+
+
+        class libro extends ProductoImpreso{
+            #idioma;
+
+            constructor(){
+                super();
+                this.#idioma = '';
+            }
+
+            set setIdioma(value){
+                this.#idioma = value;
+            }
+            get getIdioma(){
+                return this.#idioma;
+            }
+
+            estado(){
+                console.log(`El libro se encuentra en idioma ${this.#idioma} `);
+            }
+        }
+
+        const libro1 = new libro;
+        libro1.setTitulo = 'infierno';
+        libro1.setAutor = 'Dante Aligheri';
+        libro1.setCodigo = '03147';
+        libro1.setEditorial = 'seix barral';
+        libro1.setAño = '1979';
+        libro1.setPrecio = 40000;
+        libro1.setIdioma = 'Español'
+
+        libro1.informacion1();
+        libro1.estado();
+
+
+        class ProductoGrabado extends Producto{
+            #tiempoDuracion;
+            #medioTecnologico;
+
+            constructor(){
+                super();
+                this.#tiempoDuracion = 0;
+                this.#medioTecnologico = '';
+            }
+
+            set setTiempoDuracion(value){
+                this.#tiempoDuracion = value;
+            }
+            get getTiempoDuracion(){
+                return this.#tiempoDuracion;
+            }
+            set setMedioTecnologico(value){
+                this.#medioTecnologico = value;
+            }
+            get getMedioTecnologico(){
+                return this.#medioTecnologico;
+            }
+
+            informacion2(){
+                console.log(`El codigo de la cancion es ` + this.getCodigo + `y el titulo es ` + this.getTitulo + `y su autor es `+
+                              this.getAutor + `su tiempo de duracion es ` + this.getTiempoDuracion + `y fue grabado atraves de el medio `
+                                             + this.getMedioTecnologico )
+            }
+
+        }
+
+        const productoGrabado1 = new ProductoGrabado;
+        productoGrabado1.setCodigo = '2389';
+        productoGrabado1.setTitulo = 'system Regret';
+        productoGrabado1.setAutor = 'sonicore';
+        productoGrabado1.setTiempoDuracion = 521
+        productoGrabado1.setMedioTecnologico = 'vinilo'
+
+        productoGrabado1.informacion2();
+
+        class ProductoSoftware extends Producto{
+            #version;
+            #sistemaOperativo;
+
+            constructor(){
+                super();
+                this.#version = ''
+                this.#sistemaOperativo = 0
+            }
+
+            set setVersion(value){
+                this.#version = value;
+            }
+            get getVersion(){
+                return this.#version;
+            }
+            set setSistemaOperativo(value){
+                this.#sistemaOperativo = value;
+            }
+            get getSistemaOperativo(){
+                return this.#sistemaOperativo;
+            }
+
+            informacion3(){
+                console.log(`El codigo del producto es ` + this.getCodigo + `y su nombre es ` + this.getTitulo +
+                                ` y su creador es ` + this.getTitulo + ` tiene la version: ` + this.getVersion + 
+                                   `y cuenta con un sistema operativo `+ this.getSistemaOperativo)
+            }
+        }
+
+        const ProductoSoftware1 = new ProductoSoftware;
+        ProductoSoftware1.setCodigo = '2759';
+        ProductoSoftware1.setTitulo = 'Legion slim';
+        ProductoSoftware1.setAutor = 'Lenovo';
+        ProductoSoftware1.setVersion = '16 intel';
+        ProductoSoftware1.setSistemaOperativo = 7;
+
+        ProductoSoftware1.informacion3();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
